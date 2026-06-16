@@ -27,15 +27,15 @@ export default function ServicesPage() {
             <Link
               key={s.id}
               href={`#${s.id}`}
-              className="reveal group p-7 lg:p-10 flex flex-col gap-3 hover:bg-bera-mist transition-colors"
+              className="reveal group p-5 lg:p-10 flex flex-col gap-2 lg:gap-3 hover:bg-bera-mist transition-colors"
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-bera-orange">
                 Pillar {s.n}
               </p>
-              <p className="font-display text-2xl lg:text-3xl tracking-tight text-ink leading-tight">
+              <p className="font-display text-xl lg:text-3xl tracking-tight text-ink leading-tight">
                 {s.title}
               </p>
-              <span className="mt-auto inline-flex items-center gap-2 text-[12px] text-ink/55 group-hover:text-ink transition">
+              <span className="mt-auto inline-flex items-center gap-2 text-[11px] lg:text-[12px] text-ink/55 group-hover:text-ink transition">
                 Jump to section
                 <span className="text-bera-orange group-hover:translate-x-1 transition-transform">↓</span>
               </span>
@@ -53,10 +53,10 @@ export default function ServicesPage() {
             id={s.id}
             className={`border-b border-ink/10 ${idx % 2 === 1 ? 'bg-bera-mist' : 'bg-bera-cream'}`}
           >
-            <div className="mx-auto max-w-[1400px] px-5 py-20 lg:py-28">
-              <div className={`grid gap-10 lg:grid-cols-12 ${flip ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+            <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-28">
+              <div className={`grid gap-8 lg:gap-10 lg:grid-cols-12 ${flip ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                 <div className="lg:col-span-6 reveal reveal-slow">
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="relative aspect-[4/3] lg:aspect-[4/5] overflow-hidden">
                     <Image
                       src={s.image}
                       alt={s.title}
@@ -64,7 +64,7 @@ export default function ServicesPage() {
                       sizes="(min-width:1024px) 50vw, 100vw"
                       className="object-cover"
                     />
-                    <div className="absolute top-5 left-5 bg-ink/85 backdrop-blur px-3 py-2">
+                    <div className="absolute top-4 left-4 lg:top-5 lg:left-5 bg-ink/85 backdrop-blur px-3 py-2">
                       <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-bera-orange">
                         Pillar {s.n}
                       </p>
@@ -77,25 +77,25 @@ export default function ServicesPage() {
                     <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange">
                       {s.title}
                     </p>
-                    <h2 className="mt-4 font-display text-[clamp(2rem,4.5vw,3.6rem)] leading-[0.95] tracking-tightest text-ink">
+                    <h2 className="mt-3 lg:mt-4 font-display text-[clamp(1.8rem,4.5vw,3.6rem)] leading-[0.95] tracking-tightest text-ink">
                       {s.tagline}
                     </h2>
-                    <p className="mt-5 text-ink/75 text-[16px] leading-relaxed max-w-xl">
+                    <p className="mt-4 lg:mt-5 text-ink/75 text-[15px] lg:text-[16px] leading-relaxed max-w-xl">
                       {s.description}
                     </p>
                   </div>
 
                   {s.sub && (
-                    <p className="reveal mt-10 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
+                    <p className="reveal mt-8 lg:mt-10 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">
                       ─ {s.sub}
                     </p>
                   )}
 
-                  <ol className="reveal mt-6 grid gap-y-3 gap-x-6 sm:grid-cols-2 lining-nums">
+                  <ol className="reveal mt-5 lg:mt-6 grid gap-y-3 gap-x-6 sm:grid-cols-2 lining-nums">
                     {s.items.map((it, i) => (
                       <li
                         key={i}
-                        className="flex items-baseline gap-3 text-[14px] leading-snug text-ink/85"
+                        className="flex items-baseline gap-3 text-[13px] lg:text-[14px] leading-snug text-ink/85"
                       >
                         <span className="font-mono text-[11px] text-bera-orange shrink-0 pt-px">
                           {String(i + 1).padStart(2, '0')}
@@ -113,7 +113,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="bg-ink text-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 grid grid-cols-12 gap-8 items-end">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-20 grid grid-cols-12 gap-6 lg:gap-8 items-end">
           <h2 className="col-span-12 lg:col-span-8 reveal font-display tracking-tightest text-[clamp(2rem,5vw,4rem)] leading-[0.95]">
             Need a scope we haven&apos;t listed? <span className="italic text-bera-amber">Ask.</span>
           </h2>

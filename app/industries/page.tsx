@@ -4,7 +4,6 @@ import PageIntro from '@/components/PageIntro';
 
 export const metadata = { title: 'Industries Served — BeraTech LLP' };
 
-// All industries are derived directly from the PDF (services, clients, named projects)
 const INDUSTRIES = [
   {
     n: '01',
@@ -80,23 +79,23 @@ export default function IndustriesPage() {
 
       {/* Index list */}
       <section className="border-b border-ink/10 bg-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 reveal">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-10 lg:py-12">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 reveal">
             {INDUSTRIES.map((i) => (
               <a
                 key={i.n}
                 href={`#ind-${i.n}`}
-                className="group border border-ink/15 p-4 hover:bg-ink hover:text-bera-cream transition-colors"
+                className="group border border-ink/15 p-3 lg:p-4 hover:bg-ink hover:text-bera-cream transition-colors"
               >
                 <p className="font-mono text-[10px] tracking-widest text-bera-orange">{i.n}</p>
-                <p className="mt-2 text-[13px] font-medium leading-tight">{i.title}</p>
+                <p className="mt-2 text-[12px] lg:text-[13px] font-medium leading-tight">{i.title}</p>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industry rows — full-bleed alternating */}
+      {/* Industry rows — alternating */}
       {INDUSTRIES.map((ind, idx) => {
         const flip = idx % 2 === 1;
         return (
@@ -105,10 +104,10 @@ export default function IndustriesPage() {
             key={ind.n}
             className={`border-b border-ink/10 ${idx % 2 === 0 ? 'bg-bera-cream' : 'bg-bera-mist'}`}
           >
-            <div className="mx-auto max-w-[1400px] px-5 py-20 lg:py-24">
-              <div className={`grid gap-10 lg:grid-cols-12 items-center ${flip ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+            <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-24">
+              <div className={`grid gap-8 lg:gap-10 lg:grid-cols-12 items-center ${flip ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                 <div className="lg:col-span-5 reveal reveal-slow">
-                  <div className="relative aspect-[5/4] overflow-hidden">
+                  <div className="relative aspect-[4/3] lg:aspect-[5/4] overflow-hidden">
                     <Image
                       src={ind.image}
                       alt={ind.title}
@@ -119,21 +118,21 @@ export default function IndustriesPage() {
                   </div>
                 </div>
                 <div className="lg:col-span-7">
-                  <div className="reveal flex items-baseline gap-4 mb-4">
-                    <span className="font-mono text-[40px] lining-nums text-bera-orange leading-none">{ind.n}</span>
-                    <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55">{ind.pull}</p>
+                  <div className="reveal flex items-baseline gap-3 lg:gap-4 mb-3 lg:mb-4">
+                    <span className="font-mono text-[32px] lg:text-[40px] lining-nums text-bera-orange leading-none">{ind.n}</span>
+                    <p className="font-mono text-[10px] lg:text-[11px] uppercase tracking-[0.22em] text-ink/55">{ind.pull}</p>
                   </div>
-                  <h2 className="reveal font-display text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[0.95] tracking-tightest text-ink">
+                  <h2 className="reveal font-display text-[clamp(1.8rem,4.5vw,3.6rem)] leading-[0.95] tracking-tightest text-ink">
                     {ind.title}
                   </h2>
-                  <p className="reveal mt-5 max-w-2xl text-[16px] leading-relaxed text-ink/75">
+                  <p className="reveal mt-4 lg:mt-5 max-w-2xl text-[15px] lg:text-[16px] leading-relaxed text-ink/75">
                     {ind.desc}
                   </p>
-                  <div className="reveal mt-7 flex flex-wrap gap-2">
+                  <div className="reveal mt-5 lg:mt-7 flex flex-wrap gap-2">
                     {ind.scope.map((s) => (
                       <span
                         key={s}
-                        className="inline-flex items-center bg-ink text-bera-cream px-3 py-1.5 text-[12px] tracking-wide"
+                        className="inline-flex items-center bg-ink text-bera-cream px-3 py-1.5 text-[11px] lg:text-[12px] tracking-wide"
                       >
                         {s}
                       </span>
@@ -148,7 +147,7 @@ export default function IndustriesPage() {
 
       {/* CTA */}
       <section className="bg-ink text-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 grid grid-cols-12 gap-8 items-end">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-20 grid grid-cols-12 gap-6 lg:gap-8 items-end">
           <h2 className="col-span-12 lg:col-span-8 reveal font-display tracking-tightest text-[clamp(2rem,5vw,4rem)] leading-[0.95]">
             Operating in a sector not listed? <span className="italic text-bera-amber">We&apos;ll discuss.</span>
           </h2>

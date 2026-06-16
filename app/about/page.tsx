@@ -22,18 +22,18 @@ export default function AboutPage() {
 
       {/* Intro block + image */}
       <section className="border-b border-ink/10 bg-bera-cream">
-        <div className="mx-auto max-w-[1400px] grid grid-cols-12 gap-10 px-5 py-20 lg:py-28">
+        <div className="mx-auto max-w-[1400px] grid grid-cols-12 gap-6 lg:gap-10 px-4 lg:px-5 py-16 lg:py-28">
           <div className="col-span-12 lg:col-span-7 reveal">
             <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange">
               The Practice
             </p>
-            <p className="mt-6 font-display text-[clamp(1.6rem,2.6vw,2.4rem)] leading-snug tracking-tight text-ink">
+            <p className="mt-5 lg:mt-6 font-display text-[clamp(1.4rem,2.6vw,2.4rem)] leading-snug tracking-tight text-ink">
               BeraTech LLP is a three-decade-old engineering company based out of Mumbai, India. We
               are a consortium of professionals engaged in the field of
               <span className="italic text-bera-navy"> Civil, Mechanical and Marine </span>
               services.
             </p>
-            <p className="mt-6 text-[16px] leading-relaxed text-ink/75 max-w-2xl">
+            <p className="mt-5 lg:mt-6 text-[15px] lg:text-[16px] leading-relaxed text-ink/75 max-w-2xl">
               Over the years we have been involved in various small and medium scale projects —
               including the prestigious <strong className="text-ink">Naval Dockyard, Mumbai</strong>
               {' '}and{' '}
@@ -56,16 +56,16 @@ export default function AboutPage() {
 
       {/* Vision + Mission */}
       <section className="border-b border-ink/10 bg-ink text-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 lg:py-28">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 lg:col-span-5 reveal border-l-2 border-bera-orange pl-6 lg:pl-10">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-28">
+          <div className="grid grid-cols-12 gap-6 lg:gap-8">
+            <div className="col-span-12 lg:col-span-5 reveal border-l-2 border-bera-orange pl-5 lg:pl-10">
               <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange">
                 ◆ Vision Statement
               </p>
-              <h2 className="mt-5 font-display text-[clamp(2rem,3.5vw,3rem)] leading-[1] tracking-tightest">
+              <h2 className="mt-4 lg:mt-5 font-display text-[clamp(1.8rem,3.5vw,3rem)] leading-[1] tracking-tightest">
                 A global leader in <span className="italic text-bera-amber">engineering excellence.</span>
               </h2>
-              <p className="mt-6 text-[15px] leading-relaxed text-bera-cream/80">
+              <p className="mt-5 lg:mt-6 text-[14px] lg:text-[15px] leading-relaxed text-bera-cream/80">
                 At BERATECH, our vision is to be a global leader in engineering excellence — driving
                 innovation and sustainability in the fields of Civil, Mechanical and Marine
                 services. With a legacy spanning three decades, we aspire to continue being at the
@@ -76,14 +76,14 @@ export default function AboutPage() {
 
             <div className="hidden lg:block lg:col-span-1" />
 
-            <div className="col-span-12 lg:col-span-6 reveal border-l-2 border-bera-cream/30 pl-6 lg:pl-10">
+            <div className="col-span-12 lg:col-span-6 reveal border-l-2 border-bera-cream/30 pl-5 lg:pl-10">
               <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-cream/60">
                 ◆ Mission Statement
               </p>
-              <h2 className="mt-5 font-display text-[clamp(2rem,3.5vw,3rem)] leading-[1] tracking-tightest">
+              <h2 className="mt-4 lg:mt-5 font-display text-[clamp(1.8rem,3.5vw,3rem)] leading-[1] tracking-tightest">
                 Unparalleled engineering solutions — across <span className="italic text-bera-amber">every domain.</span>
               </h2>
-              <p className="mt-6 text-[15px] leading-relaxed text-bera-cream/80">
+              <p className="mt-5 lg:mt-6 text-[14px] lg:text-[15px] leading-relaxed text-bera-cream/80">
                 Our mission at BERATECH is to deliver unparalleled engineering solutions, leveraging
                 our expertise and experience across Civil, Mechanical and Marine domains. As a
                 consortium of seasoned professionals, we are committed to providing superior quality
@@ -99,15 +99,15 @@ export default function AboutPage() {
 
       {/* Operating principles */}
       <section className="border-b border-ink/10 bg-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 lg:py-28">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-28">
           <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange reveal">
             ◆ How we operate
           </p>
-          <h2 className="mt-4 reveal font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[0.95] tracking-tightest text-ink max-w-3xl">
+          <h2 className="mt-4 reveal font-display text-[clamp(1.8rem,4.5vw,3.5rem)] leading-[0.95] tracking-tightest text-ink max-w-3xl">
             Working principles drawn from <span className="italic text-bera-navy">three decades of fieldwork.</span>
           </h2>
 
-          <div className="mt-14 grid gap-px bg-ink/10 md:grid-cols-3">
+          <div className="mt-10 lg:mt-14 grid gap-px bg-ink/10 md:grid-cols-3">
             {[
               {
                 n: '01',
@@ -125,9 +125,9 @@ export default function AboutPage() {
                 d: 'Embracing innovation and fostering collaboration — between our professionals, our clients and the communities we serve.',
               },
             ].map((p) => (
-              <div key={p.n} className="reveal bg-bera-cream p-8 lg:p-10">
-                <p className="font-mono text-[40px] text-bera-orange lining-nums leading-none">{p.n}</p>
-                <h3 className="mt-6 font-display text-2xl tracking-tight text-ink">{p.t}</h3>
+              <div key={p.n} className="reveal bg-bera-cream p-7 lg:p-10">
+                <p className="font-mono text-[36px] lg:text-[40px] text-bera-orange lining-nums leading-none">{p.n}</p>
+                <h3 className="mt-5 lg:mt-6 font-display text-xl lg:text-2xl tracking-tight text-ink">{p.t}</h3>
                 <p className="mt-3 text-[14px] leading-relaxed text-ink/70">{p.d}</p>
               </div>
             ))}
@@ -137,11 +137,11 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="bg-ink text-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 grid grid-cols-12 gap-8 items-end">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-20 grid grid-cols-12 gap-6 lg:gap-8 items-end">
           <h2 className="col-span-12 lg:col-span-8 reveal font-display tracking-tightest text-[clamp(2rem,5vw,4rem)] leading-[0.95]">
             Continue the tour →
           </h2>
-          <div className="col-span-12 lg:col-span-4 reveal flex flex-col gap-4">
+          <div className="col-span-12 lg:col-span-4 reveal flex flex-col gap-3 lg:gap-4">
             <Link href="/services" className="group flex items-center justify-between border-b border-bera-cream/30 py-4 hover:border-bera-orange transition">
               <span className="font-display text-xl">Services</span>
               <span className="text-bera-orange group-hover:translate-x-1 transition-transform">→</span>

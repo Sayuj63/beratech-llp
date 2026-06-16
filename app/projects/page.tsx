@@ -4,7 +4,6 @@ import PageIntro from '@/components/PageIntro';
 
 export const metadata = { title: 'Projects — BeraTech LLP' };
 
-// Curated picks from project gallery (categorised based on the PDF section sequence)
 const FEATURED = [
   {
     cat: 'Defence · Marine',
@@ -36,7 +35,6 @@ const FEATURED = [
   },
 ];
 
-// Use a wide selection of the remaining images for the gallery
 const GALLERY = Array.from({ length: 46 }, (_, i) => `/images/projects/project-${String(i + 1).padStart(2, '0')}.jpg`);
 
 const CATEGORIES = [
@@ -63,9 +61,9 @@ export default function ProjectsPage() {
         blurb="Selected work — across offshore, onshore, ship-repair and infrastructure engagements over three decades."
       />
 
-      {/* Filter tags (visual taxonomy, not interactive) */}
+      {/* Filter tags */}
       <section className="border-b border-ink/10 bg-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-10">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-8 lg:py-10">
           <div className="flex flex-wrap gap-2 reveal">
             {CATEGORIES.map((c) => (
               <span
@@ -82,38 +80,38 @@ export default function ProjectsPage() {
 
       {/* Featured projects */}
       <section className="border-b border-ink/10 bg-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 lg:py-28">
-          <div className="mb-12 reveal">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-28">
+          <div className="mb-10 lg:mb-12 reveal">
             <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange">
               ◆ Flagship engagements
             </p>
-            <h2 className="mt-4 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[0.95] tracking-tightest text-ink max-w-3xl">
+            <h2 className="mt-3 lg:mt-4 font-display text-[clamp(1.8rem,4.5vw,3.5rem)] leading-[0.95] tracking-tightest text-ink max-w-3xl">
               Notable engagements that shaped the practice.
             </h2>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {FEATURED.map((f) => (
               <article key={f.n} className="reveal group">
-                <div className="relative aspect-[4/3] overflow-hidden mb-5">
+                <div className="relative aspect-[4/3] overflow-hidden mb-4 lg:mb-5">
                   <Image
                     src={f.image}
                     alt={f.title}
                     fill
-                    sizes="(min-width:1024px) 50vw, 100vw"
+                    sizes="(min-width:1024px) 50vw, (min-width:640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 bg-ink/85 backdrop-blur px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] font-mono text-bera-orange">
                     {f.cat}
                   </div>
                 </div>
-                <div className="flex items-baseline gap-4">
-                  <p className="font-mono text-[11px] text-bera-orange lining-nums">{f.n}</p>
+                <div className="flex items-baseline gap-3 lg:gap-4">
+                  <p className="font-mono text-[11px] text-bera-orange lining-nums shrink-0">{f.n}</p>
                   <div>
-                    <h3 className="font-display text-2xl lg:text-3xl tracking-tight text-ink leading-tight">
+                    <h3 className="font-display text-xl lg:text-3xl tracking-tight text-ink leading-tight">
                       {f.title}
                     </h3>
-                    <p className="mt-3 text-[15px] leading-relaxed text-ink/70 max-w-md">
+                    <p className="mt-2 lg:mt-3 text-[14px] lg:text-[15px] leading-relaxed text-ink/70 max-w-md">
                       {f.note}
                     </p>
                   </div>
@@ -126,13 +124,13 @@ export default function ProjectsPage() {
 
       {/* Mosaic gallery */}
       <section className="border-b border-ink/10 bg-bera-mist">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 lg:py-28">
-          <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-28">
+          <div className="mb-10 lg:mb-12 flex flex-wrap items-end justify-between gap-6">
             <div className="reveal">
               <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange">
                 ◆ Field archive
               </p>
-              <h2 className="mt-4 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[0.95] tracking-tightest text-ink">
+              <h2 className="mt-3 lg:mt-4 font-display text-[clamp(1.8rem,4.5vw,3.5rem)] leading-[0.95] tracking-tightest text-ink">
                 A walk through the <span className="italic text-bera-navy">archive.</span>
               </h2>
             </div>
@@ -142,24 +140,23 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          {/* Asymmetric masonry-feel grid using row spans */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 auto-rows-[140px] lg:auto-rows-[170px]">
+          {/* Responsive gallery: 2 cols on mobile, 3 on md, 4 on lg — fixed row height, no col-span tricks on mobile */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 auto-rows-[160px] md:auto-rows-[180px] lg:auto-rows-[200px]">
             {GALLERY.map((src, i) => {
-              // sprinkle a few row-span-2 to break monotony
-              const tall = i % 7 === 0 || i % 11 === 3;
-              const wide = i % 13 === 4;
+              // Only apply spanning on large screens to avoid mobile overflow
+              const tallLg = i % 7 === 0 || i % 11 === 3;
               return (
                 <div
                   key={src}
                   className={`reveal relative overflow-hidden bg-ink/5 group ${
-                    tall ? 'row-span-2' : ''
-                  } ${wide ? 'col-span-2' : ''}`}
+                    tallLg ? 'lg:row-span-2' : ''
+                  }`}
                 >
                   <Image
                     src={src}
                     alt={`Project archive ${i + 1}`}
                     fill
-                    sizes="(min-width:1024px) 16vw, 33vw"
+                    sizes="(min-width:1024px) 25vw, (min-width:768px) 33vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/35 transition-colors" />
@@ -175,7 +172,7 @@ export default function ProjectsPage() {
 
       {/* CTA */}
       <section className="bg-ink text-bera-cream">
-        <div className="mx-auto max-w-[1400px] px-5 py-20 grid grid-cols-12 gap-8 items-end">
+        <div className="mx-auto max-w-[1400px] px-4 lg:px-5 py-16 lg:py-20 grid grid-cols-12 gap-6 lg:gap-8 items-end">
           <h2 className="col-span-12 lg:col-span-8 reveal font-display tracking-tightest text-[clamp(2rem,5vw,4rem)] leading-[0.95]">
             Want a closer look at a specific job? <span className="italic text-bera-amber">Ask for the file.</span>
           </h2>

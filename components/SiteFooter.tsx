@@ -26,19 +26,19 @@ const COLUMNS = [
 
 export default function SiteFooter() {
   return (
-    <footer className="relative bg-ink text-bera-cream">
-      <div className="mx-auto max-w-[1400px] px-5 pt-20 pb-10">
+    <footer className="relative bg-ink text-bera-cream overflow-hidden">
+      <div className="mx-auto max-w-[1400px] px-4 lg:px-5 pt-16 lg:pt-20 pb-10">
         {/* Massive wordmark */}
-        <div className="border-b border-bera-cream/10 pb-12">
+        <div className="border-b border-bera-cream/10 pb-10 lg:pb-12">
           <p className="font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange mb-4">
             Beyond Boundaries, Building Excellence
           </p>
-          <h2 className="font-display text-[14vw] leading-[0.85] tracking-tightest text-bera-cream/95">
+          <h2 className="font-display text-[clamp(3.5rem,14vw,12rem)] leading-[0.85] tracking-tightest text-bera-cream/95 break-words">
             BeraTech
           </h2>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-12 pt-12">
+        <div className="grid gap-10 lg:grid-cols-12 pt-10 lg:pt-12">
           <div className="lg:col-span-5">
             <p className="font-mono text-[11px] tracking-[0.22em] uppercase text-bera-orange mb-5">
               Get in touch
