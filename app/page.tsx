@@ -66,9 +66,9 @@ export default function HomePage() {
             </h1>
             <div className="reveal mt-8 lg:mt-10 max-w-xl">
               <p className="text-[15px] lg:text-[17px] leading-relaxed text-ink/75">
-                BeraTech LLP is a three-decade-old engineering consortium based in Mumbai, India — a
-                team of seasoned Civil, Mechanical and Marine professionals delivering across offshore
-                platforms, ports, refineries and shipyards.
+                Welcome to BeraTech LLP — a premier engineering consortium based in Mumbai, India.
+                Backed by over 30 years of industry expertise, we deliver robust, multidisciplinary
+                solutions spanning Mechanical, Civil and Marine services.
               </p>
               <div className="mt-6 lg:mt-8 flex flex-wrap items-center gap-3 lg:gap-4">
                 <Link

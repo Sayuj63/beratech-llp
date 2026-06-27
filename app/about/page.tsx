@@ -28,16 +28,45 @@ export default function AboutPage() {
               The Practice
             </p>
             <p className="mt-5 lg:mt-6 font-display text-[clamp(1.4rem,2.6vw,2.4rem)] leading-snug tracking-tight text-ink">
-              BeraTech LLP is a three-decade-old engineering company based out of Mumbai, India. We
-              are a consortium of professionals engaged in the field of
-              <span className="italic text-bera-navy"> Civil, Mechanical and Marine </span>
+              Welcome to BeraTech LLP — a premier engineering consortium based in Mumbai, India.
+              Backed by over 30 years of rich industry expertise, we deliver robust, multidisciplinary
+              solutions spanning
+              <span className="italic text-bera-navy"> Mechanical, Civil and Marine </span>
               services.
             </p>
             <p className="mt-5 lg:mt-6 text-[15px] lg:text-[16px] leading-relaxed text-ink/75 max-w-2xl">
-              Over the years we have been involved in various small and medium scale projects —
-              including the prestigious <strong className="text-ink">Naval Dockyard, Mumbai</strong>
-              {' '}and{' '}
-              <strong className="text-ink">Delhi Metro Rail Corporation</strong>.
+              We bring together an elite team of seasoned professionals dedicated to executing
+              complex, small-to-medium-scale projects with precision, safety, and innovation.
+            </p>
+
+            <p className="mt-10 lg:mt-12 font-mono text-[11px] tracking-[0.24em] uppercase text-bera-orange">
+              ◆ Trusted by Industry Giants
+            </p>
+            <p className="mt-4 lg:mt-5 text-[15px] lg:text-[16px] leading-relaxed text-ink/75 max-w-2xl">
+              Our decades-long journey is defined by our contribution to some of the nation&rsquo;s
+              most critical infrastructure and energy projects. We are proud to have partnered with
+              prestigious organizations and public sector undertakings, including:
+            </p>
+            <ul className="mt-5 lg:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 max-w-2xl text-[14px] lg:text-[15px] text-ink/80">
+              {[
+                'Naval Dockyard, Mumbai',
+                'Delhi Metro Rail Corporation (DMRC)',
+                'L&T Shipbuilding Yard',
+                'Oil and Natural Gas Corporation (ONGC)',
+                'Hindustan Oil Exploration Company (HOEC)',
+              ].map((c) => (
+                <li key={c} className="flex items-start gap-3">
+                  <span className="mt-2 inline-block h-[5px] w-[5px] flex-none bg-bera-orange" />
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-8 lg:mt-10 text-[15px] lg:text-[16px] leading-relaxed text-ink/75 max-w-2xl">
+              At BeraTech LLP, we combine deep technical engineering knowledge with reliable project
+              management to turn complex challenges into sustainable assets. Whether navigating
+              intricate marine systems, heavy mechanical engineering, or foundational civil works,
+              we are built to deliver.
             </p>
           </div>
           <div className="col-span-12 lg:col-span-5 reveal reveal-slow">
