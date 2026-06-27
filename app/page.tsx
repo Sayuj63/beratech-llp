@@ -68,7 +68,14 @@ export default function HomePage() {
               <p className="text-[15px] lg:text-[17px] leading-relaxed text-ink/75">
                 Welcome to BeraTech LLP — a premier engineering consortium based in Mumbai, India.
                 Backed by over 30 years of industry expertise, we deliver robust, multidisciplinary
-                solutions spanning Mechanical, Civil and Marine services.
+                solutions spanning Mechanical, Civil and Marine services.{' '}
+                <Link
+                  href="/about"
+                  className="group inline-flex items-baseline gap-1.5 font-medium text-bera-navy bg-bera-orange/20 hover:bg-bera-orange/35 px-2 py-0.5 rounded-sm transition"
+                >
+                  Read more
+                  <span className="text-bera-orange group-hover:translate-x-0.5 transition-transform">→</span>
+                </Link>
               </p>
               <div className="mt-6 lg:mt-8 flex flex-wrap items-center gap-3 lg:gap-4">
                 <Link
